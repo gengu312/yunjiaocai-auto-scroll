@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vs/
+.vscode/settings.json
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+build/
+dist/
+*.exe

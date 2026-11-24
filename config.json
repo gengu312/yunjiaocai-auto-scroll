@@ -1,0 +1,7 @@
+{
+  "hotkey": "ctrl+shift+s",
+  "scroll_distance": 100,
+  "scroll_speed": 0.1,
+  "scroll_duration": 10,
+  "scroll_direction": "down"
+}
