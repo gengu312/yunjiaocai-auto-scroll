@@ -1,120 +1,124 @@
-# 云教材自动刷课工具
+# Yunjiaocai Auto-Scroll Tool
 
-> 原始开发时间：2025-06-16
+<p>
+  <a href="./README.md"><img src="https://img.shields.io/badge/Docs-English-2563EB?style=flat-square" alt="English" /></a>
+  <a href="./README.zh-CN.md"><img src="https://img.shields.io/badge/%E6%96%87%E6%A1%A3-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-64748B?style=flat-square" alt="简体中文" /></a>
+</p>
 
-一个用于自动模拟鼠标滚动操作的Windows桌面应用程序，主要用于云教材等需要持续滚动的场景。
+> Original Development Date: 2025-06-16
 
-## 功能特点
+A Windows desktop utility that automatically simulates mouse scrollbar dragging and scrolling operations, primarily designed for digital textbook platforms (such as Yunjiaocai) and other continuous-reading scenarios.
 
-- 🖱️ **智能鼠标控制**: 模拟鼠标按住滚动条上下移动
-- ⌨️ **全局快捷键**: 支持自定义快捷键，随时启动/停止
-- ⚙️ **参数可调**: 滚动距离、速度、持续时间均可自定义
-- 🎯 **多种模式**: 支持向上、向下、上下往复滚动
-- 💾 **配置保存**: 自动保存用户设置
-- 🖥️ **简洁GUI**: 直观易用的图形界面
-- 📦 **一键打包**: 可打包成独立exe文件
+## Features
 
-## 系统要求
+- 🖱️ **Smart Mouse Control**: Simulates holding and dragging a scrollbar thumb up and down
+- ⌨️ **Global Hotkeys**: Supports customizable global shortcuts to start or stop scrolling anytime
+- ⚙️ **Adjustable Parameters**: Customize scroll distance, interval speed, and total duration
+- 🎯 **Multiple Modes**: Supports scrolling upward, downward, or alternating back-and-forth
+- 💾 **Persistent Settings**: Automatically saves user configuration to disk
+- 🖥️ **Clean GUI**: Intuitive and lightweight graphical user interface
+- 📦 **One-Click Packaging**: Easily bundle into a standalone `.exe` executable
 
-- Windows 7/8/10/11
-- Python 3.7+ (如果从源码运行)
-- 管理员权限 (用于全局快捷键监听)
+## System Requirements
 
-## 快速开始
+- Windows 7 / 8 / 10 / 11
+- Python 3.7+ (when running from source)
+- Administrator privileges (required for global hotkey listening on Windows)
 
-### 方式一：直接运行exe文件
+## Quick Start
 
-1. 下载打包好的exe文件
-2. 右键以管理员身份运行
-3. 设置参数并保存配置
-4. 将鼠标移动到目标滚动条位置
-5. 按下设置的快捷键开始自动滚动
+### Option 1: Run the Standalone Executable
 
-### 方式二：从源码运行
+1. Download the packaged `.exe` file
+2. Right-click and select **Run as administrator**
+3. Configure your preferred parameters and save settings
+4. Hover the mouse cursor over the target scrollbar thumb
+5. Press the configured global hotkey to start automatic scrolling
 
-1. **克隆项目**
+### Option 2: Run from Source
+
+1. **Clone the repository**
 ```bash
-git clone <项目地址>
+git clone <repository-url>
 cd yunjiaocaijs
 ```
 
-2. **安装依赖**
+2. **Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **运行程序**
+3. **Launch the application**
 ```bash
 python main.py
 ```
 
-## 使用说明
+## Usage Guide
 
-### 基本操作
+### Basic Workflow
 
-1. **启动程序**: 双击exe文件或运行`python main.py`
-2. **配置参数**:
-   - **快捷键**: 设置触发滚动的组合键 (默认: Ctrl+Shift+S)
-   - **滚动距离**: 每次移动的像素距离 (10-500像素)
-   - **滚动速度**: 每次移动的时间间隔 (0.01-1.0秒)
-   - **持续时间**: 自动滚动的总时长 (1-300秒)
-   - **滚动方向**: 向上/向下/上下往复
+1. **Launch**: Double-click the `.exe` executable or run `python main.py`
+2. **Configure Parameters**:
+   - **Hotkey**: Key combination to toggle scrolling (default: `Ctrl+Shift+S`)
+   - **Scroll Distance**: Pixel distance per movement step (`10–500` px)
+   - **Scroll Speed**: Time interval between movement steps (`0.01–1.0` s)
+   - **Duration**: Total auto-scrolling time (`1–300` s)
+   - **Scroll Direction**: `up`, `down`, or alternating up-and-down
+3. **Save Configuration**: Click the **"Save Config"** button
+4. **Test**: Click **"Test Scroll"** to verify behavior
+5. **Start Scrolling**:
+   - Position the mouse cursor directly over the target scrollbar thumb
+   - Press your configured hotkey to begin scrolling
+   - Press the hotkey again at any time to stop scrolling
 
-3. **保存配置**: 点击"保存配置"按钮
-4. **测试功能**: 点击"测试滚动"进行功能测试
-5. **开始使用**:
-   - 将鼠标移动到目标滚动条位置
-   - 按下设置的快捷键开始滚动
-   - 再次按快捷键可停止滚动
+### Parameter Reference
 
-### 参数说明
+| Parameter | Description | Recommended Value |
+|-----------|-------------|-------------------|
+| Hotkey | Key combination to start/stop scrolling | `ctrl+shift+s` |
+| Scroll Distance | Pixels moved per step | `100–200` |
+| Scroll Speed | Delay interval between steps | `0.1–0.3` s |
+| Duration | Total scrolling duration | `10–60` s |
+| Scroll Direction | Movement direction | `down` (downward) |
 
-| 参数 | 说明 | 推荐值 |
-|------|------|--------|
-| 快捷键 | 触发滚动的组合键 | ctrl+shift+s |
-| 滚动距离 | 每次移动像素数 | 100-200 |
-| 滚动速度 | 移动间隔时间 | 0.1-0.3秒 |
-| 持续时间 | 总滚动时长 | 10-60秒 |
-| 滚动方向 | 移动方向 | down(向下) |
+### Tips for Best Results
 
-### 使用技巧
+1. **Precise Cursor Placement**: Place the mouse cursor accurately on the scrollbar thumb before triggering
+2. **Active Window**: Make sure the target application window is focused in the foreground
+3. **Tune Parameters First**: Use the **"Test Scroll"** button to fine-tune distance and speed
+4. **Avoid Shortcut Conflicts**: Pick a hotkey combination that does not clash with other active software
+5. **Administrator Mode**: Run as administrator so global hotkeys register reliably across windows
 
-1. **精确定位**: 将鼠标精确移动到滚动条的滑块位置
-2. **窗口激活**: 确保目标窗口处于前台活动状态
-3. **参数调试**: 先使用"测试滚动"功能调试参数
-4. **快捷键选择**: 避免与其他软件快捷键冲突
-5. **管理员权限**: 以管理员身份运行以确保快捷键正常工作
+## Packaging into an Executable
 
-## 打包说明
+### Automated Build
 
-### 自动打包
-
-运行打包脚本：
+Run the included build script:
 ```bash
 python build.py
 ```
 
-脚本会自动：
-1. 安装依赖包
-2. 使用PyInstaller打包
-3. 生成单文件exe
-4. 复制配置文件
+The script automatically:
+1. Installs required dependencies
+2. Invokes PyInstaller
+3. Generates a single-file `.exe` executable
+4. Copies `config.json` alongside the output
 
-### 手动打包
+### Manual Build
 
 ```bash
-# 安装打包工具
+# Install PyInstaller
 pip install pyinstaller
 
-# 打包命令
+# Build single-file windowed executable
 pyinstaller --onefile --windowed --name=云教材刷课工具 --add-data=config.json;. main.py
 ```
 
-打包后的文件位于 `dist` 目录中。
+The packaged executable will be output to the `dist` directory.
 
-## 配置文件
+## Configuration File
 
-程序使用 `config.json` 保存用户配置：
+User preferences are stored in `config.json`:
 
 ```json
 {
@@ -126,76 +130,76 @@ pyinstaller --onefile --windowed --name=云教材刷课工具 --add-data=config.
 }
 ```
 
-## 常见问题
+## FAQ
 
-### Q: 快捷键不起作用？
-A: 请确保以管理员身份运行程序，Windows需要管理员权限才能监听全局快捷键。
+### Q: Why isn't the global hotkey working?
+A: Make sure you run the program as **Administrator**. Windows requires elevated privileges to capture global keyboard hooks across applications.
 
-### Q: 滚动不准确？
-A: 请确保鼠标精确定位在滚动条滑块上，并调整滚动距离参数。
+### Q: Why is the scrolling inaccurate?
+A: Ensure the cursor is positioned directly over the scrollbar thumb and adjust the **Scroll Distance** setting as needed.
 
-### Q: 程序无法启动？
-A: 检查是否安装了所有依赖包，或尝试重新安装Python环境。
+### Q: The program fails to start from source?
+A: Verify that all packages in `requirements.txt` are installed, or check your Python 3.7+ environment setup.
 
-### Q: 打包失败？
-A: 确保安装了PyInstaller，并检查Python环境是否完整。
+### Q: Packaging fails?
+A: Ensure `pyinstaller` is installed properly in an intact Python environment.
 
-### Q: 滚动速度太快/太慢？
-A: 调整"滚动速度"参数，数值越小速度越快。
+### Q: Scrolling is too fast or too slow?
+A: Adjust the **Scroll Speed** interval—smaller values produce faster movement.
 
-## 注意事项
+## Important Notice
 
-⚠️ **重要提醒**:
-- 本工具仅用于学习和研究目的
-- 请遵守相关网站的使用条款
-- 不建议用于违反服务条款的行为
-- 使用时请确保不影响正常的学习体验
+⚠️ **Disclaimer & Fair Use**:
+- This tool is intended strictly for personal learning and technical research
+- Please comply with the terms of service of any website or platform you use
+- Using automation to violate platform policies is discouraged
+- Ensure usage does not disrupt normal study workflows
 
-## 技术架构
+## Tech Architecture
 
-- **GUI框架**: Tkinter (Python内置)
-- **鼠标控制**: PyAutoGUI
-- **快捷键监听**: pynput
-- **打包工具**: PyInstaller
-- **配置管理**: JSON
+- **GUI Framework**: Tkinter (Python standard library)
+- **Mouse Automation**: PyAutoGUI
+- **Global Hotkey Listener**: `pynput`
+- **Executable Bundler**: PyInstaller
+- **Configuration Storage**: JSON
 
-## 项目结构
+## Project Structure
 
 ```
 yunjiaocaijs/
-├── main.py              # 主程序文件
-├── config.json          # 配置文件
-├── requirements.txt     # 依赖包列表
-├── build.py            # 打包脚本
-├── README.md           # 说明文档
-└── dist/               # 打包输出目录
+├── main.py              # Main GUI & automation entry point
+├── config.json          # User configuration file
+├── requirements.txt     # Python dependencies
+├── build.py             # Automated PyInstaller build script
+├── README.md            # Project documentation
+└── dist/                # Packaged executable output directory
     └── 云教材刷课工具.exe
 ```
 
-## 更新日志
+## Changelog
 
 ### v1.0.0 (2024-01-XX)
-- ✨ 初始版本发布
-- 🖱️ 基础鼠标滚动功能
-- ⌨️ 全局快捷键支持
-- 🎯 多种滚动模式
-- 💾 配置保存功能
-- 📦 一键打包支持
+- ✨ Initial release
+- 🖱️ Core mouse scrollbar dragging automation
+- ⌨️ Global hotkey toggle support
+- 🎯 Multiple scrolling directions & modes
+- 💾 Persistent JSON configuration
+- 📦 One-click PyInstaller build script
 
-## 许可证
+## License
 
-本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 贡献
+## Contributing
 
-欢迎提交 Issue 和 Pull Request！
+Issues and Pull Requests are welcome!
 
-## 联系方式
+## Contact
 
-如有问题或建议，请通过以下方式联系：
-- 提交 GitHub Issue
-- 发送邮件至: [your-email@example.com]
+If you have questions or suggestions, feel free to reach out:
+- Open a GitHub Issue
+- Email: [your-email@example.com]
 
 ---
 
-**免责声明**: 本工具仅供学习和研究使用，使用者需自行承担使用风险和责任。
+**Disclaimer**: This utility is provided solely for educational and research purposes. Users assume full responsibility for any risks arising from its use.
